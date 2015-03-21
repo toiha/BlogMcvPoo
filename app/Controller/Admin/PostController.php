@@ -3,10 +3,7 @@ namespace App\Controller\Admin;
 	
 use \Core\HTML\BootstrapForm;
 use \App;
-	
-/**
- * 
- */
+
 Class PostController extends AppController{
 	
 	public function __construct(){
@@ -44,11 +41,11 @@ Class PostController extends AppController{
 	 * @param integer $id
 	 */
 	public function edit($id){
-		$post = $this->Post->find($id);
+		$post = $this->Post->findWidthCategory($id);
 		$categories = $this->Category->all();
 		if (!empty($_POST)) {
 			$resultat = $this->Post->update($id, [
-				'title'=>$_POST['title'], 
+				'name'=>$_POST['title'], 
 				'content'=>$_POST['content'],
 				'category_id'=>$_POST['category_id']
 			]);
