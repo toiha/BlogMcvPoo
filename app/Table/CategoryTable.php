@@ -11,17 +11,17 @@ Class CategoryTable extends Table{
      */
     
     /**
-     * Gets the last post with category request
+     * Gets the last posts with category request
      * @param  integer $category_id
      * @return Array
      */
     public function lastByCategory($category_id){
 	    return $this->query("
-			    SELECT post.id, post.title, post.content, post.date, category.title as category
-			    FROM post
+			    SELECT posts.id, posts.name, posts.content, posts.created, category.title as category
+			    FROM posts
 			    LEFT JOIN category ON category_id = category.id
-			    WHERE post.category_id =?
-			    ORDER BY post.date DESC", [$category_id]);
+			    WHERE posts.category_id =?
+			    ORDER BY posts.created DESC", [$category_id]);
     }
 
 }   

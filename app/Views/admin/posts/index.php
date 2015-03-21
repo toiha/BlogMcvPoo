@@ -14,8 +14,8 @@
 	    <?php foreach ($posts as $post): ?>
 		<tr>
 		    <td><a href="/admin/post/edit/<?= $post->id ?>"><?= $post->id ?></a> </td>
-		    <td><a href="/admin/post/edit/<?= $post->id ?>"><?= $post->title ?></a> </td>
-		    <td><?= $post->date ?> </td>
+		    <td><a href="/admin/post/edit/<?= $post->id ?>"><?= $post->name ?></a> </td>
+		    <td><?= $post->created ?> </td>
 		    <td>
 			<a href="/admin/post/edit/<?= $post->id ?>" class="btn btn-primary btn-xs">Editer</a> 
 			<form method="post" action="/admin/post/del/" style="display: inline">

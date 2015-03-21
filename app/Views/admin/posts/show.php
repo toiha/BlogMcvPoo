@@ -6,9 +6,9 @@ if ($post === false) {
 	$app->notFound();
 }
 
-$app->title = $post->title ." | ". $app->title;
+$app->title = $post->name ." | ". $app->title;
 
 ?>
 
-<h1  class="page-header"> <?= $post->title ?> </h1>
+<h1  class="page-header"> <?= $post->name ?> </h1>
 <p> <?= $post->content ?> </p>
