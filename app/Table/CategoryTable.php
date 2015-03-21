@@ -3,7 +3,7 @@ namespace App\Table;
 use \Core\Table\Table;
 
 Class CategoryTable extends Table{
-    
+    protected $table = 'categories';
     /**
      * 
      * @param $category_id int 

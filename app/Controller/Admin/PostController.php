@@ -41,7 +41,7 @@ Class PostController extends AppController{
 	 * @param integer $id
 	 */
 	public function edit($id){
-		$post = $this->Post->findWidthCategory($id);
+		$post = $this->Post->find($id);
 		$categories = $this->Category->all();
 		if (!empty($_POST)) {
 			$resultat = $this->Post->update($id, [
