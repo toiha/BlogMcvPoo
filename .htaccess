@@ -1,0 +1,16 @@
+AddDefaultCharset UTF-8
+# Don't show directory listings for URLs which map to a directory.
+Options -Indexes
+
+# Follow symbolic links in this directory.
+Options +FollowSymLinks
+
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^.*$ /public/index.php?p=$0 [L,QSA]
+#RedirectMatch permanent ^/$ /public/
+DirectoryIndex	/public/index.php
